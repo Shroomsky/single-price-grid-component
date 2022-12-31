@@ -52,7 +52,7 @@ button {
   padding: 1rem 0rem;
   color: #fff;
 }
-.card__item h3 {
+.card__item h2 {
   padding: 1rem 0rem;
   font-weight: 700;
   font-size: 16px;
@@ -67,10 +67,10 @@ button {
   grid-row: 1/2;
   padding: 25px 25px;
 }
-.card__item--Join h2 {
+.card__item--Join h1 {
   color: hsl(179deg, 62%, 43%);
 }
-.card__item--Join h3 {
+.card__item--Join h2 {
   color: hsl(71deg, 73%, 54%);
 }
 .card__item--Join p {
