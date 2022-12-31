@@ -46,13 +46,13 @@ button {
 	&__item {
 		padding: 20px 25px;
 		width: 100%;
-		& h2 {
+		& h1 {
 			font-size: 21px;
 			font-weight: 700;
 			padding: 1rem 0rem;
 			color: #fff;
 		}
-		& h3 {
+		& h2 {
 			padding: 1rem 0rem;
 			font-weight: 700;
 			font-size: 16px;
@@ -69,7 +69,7 @@ button {
 			& h1 {
 				color: colors.$Cyan;
 			}
-			& h3 {
+			& h2 {
 				color: colors.$Bright_Yellow;
 			}
 			& p {
