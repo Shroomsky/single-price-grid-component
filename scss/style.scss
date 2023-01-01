@@ -1,15 +1,63 @@
 @use "./colors" as colors;
 
-* {
+//============CSS Reset==========//
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+
 html,
 body {
-	min-height: 100vh;
-	scroll-behavior: smooth;
+	height: 100%;
 }
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+ol,
+ul {
+	list-style: none;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+#root,
+#__next {
+	isolation: isolate;
+}
+//============CSS Reset==========//
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -19,12 +67,13 @@ body {
 	background-size: cover;
 	background-color: colors.$Light_Gray;
 	font-family: "Karla", sans-serif;
+	scroll-behavior: smooth;
 }
 a,
-body,
 button {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 //=================Wrapper=============//
 .wrapper {
 	flex: 1 0 auto;
@@ -35,7 +84,6 @@ button {
 //=================Card=============//
 
 .card {
-	
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
@@ -46,31 +94,29 @@ button {
 	&__item {
 		padding: 20px 25px;
 		width: 100%;
-		& h2 {
-			font-size: 21px;
+		& h1 {
+			color: colors.$Cyan;
+			font-size: 2rem;
 			font-weight: 700;
-			padding: 1rem 0rem;
-			color: #fff;
 		}
 		& h2 {
 			padding: 1rem 0rem;
 			font-weight: 700;
-			font-size: 16px;
+			font-size: 1rem;
+			color: #fff;
 		}
 		& p {
 			font-weight: 400;
 			color: colors.$Light_Gray;
 		}
 		&--Join {
-			min-height: 15rem;
 			background-color: #fff;
 			grid-row: 1 / 2;
-			padding: 25px 25px;
-			& h1 {
-				color: colors.$Cyan;
-			}
-			& h2 {
+
+			& p.highlighted {
 				color: colors.$Bright_Yellow;
+				padding: 1rem 0rem;
+				font-weight: 700;
 			}
 			& p {
 				color: colors.$Grayish_Blue;
@@ -80,33 +126,33 @@ button {
 		&--SignUp {
 			background-color: colors.$Cyan;
 			grid-row: 2 / 3;
-			& h3 {
+			& p.price {
 				color: #fff;
 				font-weight: 700;
-				font-size: 36px;
+				font-size: 2.25rem;
 				padding: 0.4rem 0;
 				& span {
-					font-weight: 40;
-					font-size: 16px;
+					font-weight: 400;
+					font-size: 1rem;
 					vertical-align: 40%;
 					color: colors.$Darker_Light_Gray;
-					letter-spacing: 1.2px;
 				}
 			}
 			& p {
-				font-size: 18px;
+				font-size: 1rem;
 			}
-			& button {
+			& a {
+				appearance: button;
 				width: 100%;
-				height: 50px;
-				margin-top: 35px;
-				margin-bottom: 15px;
+				padding: 1.25rem 0;
+				margin-top: 2rem;
 				background-color: colors.$Bright_Yellow;
 				border: none;
-				border-radius: 8px;
+				border-radius: 0.5rem;
 				box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.1);
 				font-weight: 700;
-				font-size: 16px;
+				text-align: center;
+				text-decoration: none;
 				font-family: "Karla", sans-serif;
 				color: #fff;
 				transition: transform 0.3s;
@@ -118,13 +164,11 @@ button {
 		&--WhyUs {
 			background-color: colors.$Light_Cyan;
 			grid-row: 3 / 4;
-			padding-bottom: 20px;
-			& p {
-				font-size: 16px;
+			& ul {
+				font-size: 1rem;
 				font-weight: 400;
-				padding-right: 5rem;
 				line-height: 1.5;
-				letter-spacing: 1px;
+				color: colors.$Light_Gray;
 			}
 		}
 	}
@@ -137,7 +181,7 @@ button {
 	flex-shrink: 0;
 	position: relative;
 	bottom: 0;
-	
+
 	padding: 0.5rem;
 	width: 100%;
 	color: colors.$Light_Gray;
@@ -158,8 +202,8 @@ button {
 //=====================Media================//
 @media (min-width: 1440px) {
 	.wrapper {
-		min-width: 600px;
-		max-width: 900px;
+		min-width: 38rem;
+		max-width: 57rem;
 	}
 	.card {
 		margin-top: 20%;
